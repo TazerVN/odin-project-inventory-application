@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="navigation"><%- include('nav') %></div>
+    <div class="container">
+      <div class="filter"><%- include('filter', {type: types}) %></div>
+      <ul>
+        <% if (locals.list) {%> <%list.forEach(pokemon => { %>
+        <li class="item">
+          <h1><%= pokemon.p_name %></h1>
+          <div>
+            <h3 class="type"><%= pokemon.t1_name %></h3>
+            <% if (pokemon.t2_name != null) {%>
+
+            <h3 class="type"><%= pokemon.t2_name %></h3>
+            <% } %>
+          </div>
+          <h3>Gender: <%= pokemon.gender %></h3>
+          <form action=<%="/delete/?id=" + pokemon.p_id %> method="POST">
+            <button class="delete_button" type="submit">Delete</button>
+          </form>
+        </li>
+        <% }); %> <% } %>
+        <form class="item" action="/new" method="get">
+          <button class="button" type="submit">Add</button>
+        </form>
+      </ul>
+    </div>
+  </body>
+</html>

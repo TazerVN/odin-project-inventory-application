@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Pokemon</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>NEW!!</h1>
+    <form class="form" action="/new" method="post">
+      <label for="name">Pokemon Name</label>
+      <input class="input" type="text" name="name" id="name" />
+      <label for="type">Type</label>
+      <select class="input" name="type1" id="type1">
+        <% if(locals.types){%><%types.forEach(type => {%>
+        <option value=<%= type.type_id %>><%=type.type_name %></option>
+        <% }) %> <% } %>
+      </select>
+      <select class="input" name="type2" id="type2">
+        <option value=<%= null %>></option>
+        <% if(locals.types){%><%types.forEach(type => {%>
+        <option value=<%= type.type_id %>><%=type.type_name %></option>
+        <% }) %> <% } %>
+      </select>
+      <label for="gender">Gender</label>
+      <select class="input" name="gender" id="gender">
+        <option value="1">Male</option>
+        <option value="2">Female</option>
+      </select>
+      <button type="submit" class="button">Submit</button>
+    </form>
+  </body>
+</html>

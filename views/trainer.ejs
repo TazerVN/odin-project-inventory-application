@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="navigation"><%- include('nav') %></div>
+    <div class="type_container">
+      <ul>
+        <% if (locals.trainers) {%> <%trainers.forEach(trainer => { %>
+        <li class="item">
+          <h1><%= trainer.trainer_name %></h1>
+          <ul class="pokemon_list">
+            <li><%= trainer.p1_name %></li>
+            <% if(trainer.p2_name){ %>
+            <li><%= trainer.p2_name %></li>
+            <% } %> <% if(trainer.p3_name){ %>
+            <li><%= trainer.p3_name %></li>
+            <% } %> <% if(trainer.p4_name){ %>
+            <li><%= trainer.p4_name %></li>
+            <% } %> <% if(trainer.p5_name){ %>
+            <li><%= trainer.p5_name %></li>
+            <% } %> <% if(trainer.p6_name){ %>
+            <li><%= trainer.p6_name %></li>
+            <% } %>
+          </ul>
+          <form action=<%= "/trainer/delete/?id=" + trainer.trainer_id %> method="POST">
+            <button class="button"  type="submit">Delete</button>
+          </form>
+        </li>
+        <% }); %> <% } %>
+      </ul>
+      <form class="item" action="/trainer/new" method="get">
+        <button class="button" type="submit">Add</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+* {
+  color: whitesmoke;
+  padding: 0;
+  font-size: 1rem;
+  user-select: none;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 16px;
+  padding: 16px;
+  list-style: none;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  background-color: darkgoldenrod;
+  border-radius: 16px;
+  grid-row: 1/4;
+  padding: 16px;
+}
+
+.container {
+  padding: 16px;
+  gap: 16px;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  background-color: sienna;
+  border-radius: 16px;
+  max-height: 90vh;
+}
+
+.type_container {
+  background-color: sienna;
+  height: 90vh;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.button {
+  display: flex;
+  background-color: burlywood;
+  padding: 16px;
+  border-radius: 12px;
+  border: 0;
+  width: 10rem;
+  box-shadow: 2px 2px 4px -2px rgb(68, 34, 9);
+  margin: 4px;
+}
+
+.delete_button {
+  display: flex;
+  background-color: burlywood;
+  padding: 16px;
+  border-radius: 12px;
+  border: 0;
+  box-shadow: 2px 2px 4px -2px rgb(68, 34, 9);
+  margin: 4px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: saddlebrown;
+  border-radius: 16px;
+  padding: 16px;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin: 10rem;
+}
+
+.input,
+option {
+  padding: 16px;
+  display: block;
+  width: 10rem;
+  color: black;
+}
+
+.type {
+  display: inline;
+  background-color: rgb(151, 115, 67);
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: darkgoldenrod;
+  font-size: 1em;
+  padding: 16px;
+  box-shadow: 4px 4px 10px -2px rgb(68, 34, 9);
+  border-radius: 16px;
+  user-select: none;
+}
+
+body {
+  background-color: black;
+}
+
+.type-filter {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: rgb(151, 115, 67);
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.pokemon_container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr 1fr 2fr;
+  gap: 16px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.pokemon_list {
+  display: flex;
+  flex-direction: column;
+  background-color: saddlebrown;
+  border-radius: 16px;
+  width: 10rem;
+}

@@ -1,0 +1,11 @@
+<form action="/" method="post">
+  <ul class="container">
+    <% if (locals.types){%> <% types.forEach(type => { %>
+    <li class="type-filter">
+      <label for=<%= type.type_name %>><%= type.type_name %></label>
+      <input type="checkbox" name="type" value=<%= type.type_name %> id=<%= type.type_name %>></li>
+    <% });%> <% } %>
+  </ul>
+  <button type="submit" class="button">Submit</button>
+  <a href="/" class="button">Reset</a>
+</form>

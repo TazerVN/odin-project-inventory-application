@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Pokemon</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>NEW!!</h1>
+    <form class="form" action="/trainer/new" method="post">
+      <label for="name">Trainer Name</label>
+      <input class="input" type="text" name="name" id="name" />
+      <div class="pokemon_container">
+          <label for="p1">Pokemon 1:</label>
+            <select class="input" name="p1" id="p1" required>
+            <% if(locals.pokemons){%><% pokemons.forEach(pokemon =>{ %>
+                <option value=<%= pokemon.p_id %>><%= pokemon.p_name %></option>
+            <% }) %><% } %>
+            </select>
+            <label for="p2">Pokemon 2:</label>
+            <select class="input" name="p2" id="p2">
+                <option value="" default></option>
+            <% if(locals.pokemons){%><% pokemons.forEach(pokemon =>{ %>
+                <option value=<%= pokemon.p_id %>><%= pokemon.p_name %></option>
+            <% }) %><% } %>
+            </select>
+
+            <label for="p3">Pokemon 3:</label>
+            <select class="input" name="p3" id="p3">
+                <option value="" default></option>
+            <% if(locals.pokemons){%><% pokemons.forEach(pokemon =>{ %>
+                <option value=<%= pokemon.p_id %>><%= pokemon.p_name %></option>
+            <% }) %><% } %>
+            </select>
+
+            <label for="p4">Pokemon 4:</label>
+            <select class="input" name="p4" id="p4">
+                <option value="" default></option>
+            <% if(locals.pokemons){%><% pokemons.forEach(pokemon =>{ %>
+                <option value=<%= pokemon.p_id %>><%= pokemon.p_name %></option>
+            <% }) %><% } %>
+            </select>
+
+            <label for="p5">Pokemon 5:</label>
+            <select class="input" name="p5" id="p5">
+                <option value="" default></option>
+            <% if(locals.pokemons){%><% pokemons.forEach(pokemon =>{ %>
+                <option value=<%= pokemon.p_id %>><%= pokemon.p_name %></option>
+            <% }) %><% } %>
+            </select>
+
+            <label for="p6">Pokemon 6:</label>
+            <select class="input" name="p6" id="p6">
+                <option value="" default></option>
+            <% if(locals.pokemons){%><% pokemons.forEach(pokemon =>{ %>
+                <option value=<%= pokemon.p_id %>><%= pokemon.p_name %></option>
+            <% }) %><% } %>
+            </select>
+                
+      </div>
+      <button type="submit" class="button">Submit</button>
+    </form>
+  </body>
+</html>
